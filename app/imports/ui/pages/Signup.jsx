@@ -33,13 +33,14 @@ class Signup extends React.Component {
 
   /** Display the signup form. Redirect to add page after successful registration and login. */
   render() {
+    const register = { paddingTop: '15px', paddingBottom: '15px' };
     const { from } = this.props.location.state || { from: { pathname: '/add' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
     return (
-      <Container id="signup-page">
+      <Container id="signup-page" style={register}>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">
@@ -48,13 +49,13 @@ class Signup extends React.Component {
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input
-                  label="Email"
+                  label="User ID"
                   id="signup-form-email"
                   icon="user"
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="E-mail address"
+                  placeholder="User ID"
                   onChange={this.handleChange}
                 />
                 <Form.Input

@@ -35,6 +35,7 @@ export default class Signin extends React.Component {
 
   /** Render the signin form. */
   render() {
+    const signIn = { paddingTop: '15px', paddingBottom: '15px' };
     const { from } = this.props.location.state || { from: { pathname: '/' } };
     // if correct authentication, redirect to page instead of login screen
     if (this.state.redirectToReferer) {
@@ -42,7 +43,7 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
-      <Container id="signin-page">
+      <Container id="signin-page" style={signIn}>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">
@@ -51,13 +52,13 @@ export default class Signin extends React.Component {
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input
-                  label="Email"
+                  label="User ID"
                   id="signin-form-email"
                   icon="user"
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="E-mail address"
+                  placeholder="User ID"
                   onChange={this.handleChange}
                 />
                 <Form.Input
