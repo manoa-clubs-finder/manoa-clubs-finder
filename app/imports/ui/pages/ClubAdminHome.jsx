@@ -11,7 +11,7 @@ class ClubAdminHome extends React.Component {
           <Grid container centered stackable columns={2}>
             <Image fluid src='https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/uhm-first-year.jpg'/>
             <Grid.Column textAlign='center'>
-              <Header as='h1'>
+              <Header as='h1' textAlign='center'>
                 <Icon name='edit' size='huge'/>
                 <Header.Content>Edit Club Profile</Header.Content>
               </Header>
@@ -20,7 +20,7 @@ class ClubAdminHome extends React.Component {
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-              <Header as='h1'>
+              <Header textAlign='center' as='h1'>
                 <Icon name='search' size='huge'/>
                 <Header.Content>View Clubs</Header.Content>
               </Header>
