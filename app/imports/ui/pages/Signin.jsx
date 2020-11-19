@@ -53,7 +53,7 @@ export default class Signin extends React.Component {
               <Segment stacked>
                 <Form.Input
                   label="User ID"
-                  id="signin-form-username"
+                  id="signin-form-userId"
                   icon="user"
                   iconPosition="left"
                   name="userId"
