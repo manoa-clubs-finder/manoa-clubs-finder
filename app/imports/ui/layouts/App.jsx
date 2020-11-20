@@ -109,6 +109,7 @@ AdminProtectedRoute.propTypes = {
   location: PropTypes.object,
 };
 
+/** Require a component and location to be passed to each ClubAdminProtectedRoute. */
 ClubAdminProtectedRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   location: PropTypes.object,
