@@ -9,7 +9,7 @@ class ClubAdminHome extends React.Component {
     return (
         <div style={homePage}>
           <Grid container centered stackable columns={2}>
-            <Image fluid src=''/>
+            <Image fluid src='\images\club-admin-home.jpg'/>
             <Grid.Column>
               <Header as='h1' textAlign='center'>
                 <Icon name='edit' size='huge'/>
