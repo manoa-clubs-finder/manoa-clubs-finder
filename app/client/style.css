@@ -1,4 +1,11 @@
 .club-admin-home-background {
-  background: url('images/club-admin-home.jpg') no-repeat center center fixed;
+  background: url('public/images/club-admin-home.jpg') no-repeat center center fixed;
   background-size: cover;
 }
+.admin-background{
+  background: url(images\diamond-head.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+}
+
