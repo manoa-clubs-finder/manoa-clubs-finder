@@ -1,18 +1,12 @@
-import React, { Component, createRef } from 'react';
-import { Grid, Icon, Header, Image, Sticky, Menu, Input, Segment, Ref, Rail, Table, Checkbox, Card } from 'semantic-ui-react';
+import React, { createRef } from 'react';
+import { Grid, Icon, Header, Image, Sticky, Segment, Ref, Table, Checkbox, Card } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class ClubAdminHome extends React.Component {
   contextRef = createRef()
 
-
   render() {
     const homePage = { paddingTop: '4px', paddingBottom: '15px' };
-
-    const Placeholder = () => <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-
-    const filterTable = { paddingLeft: '-100px' };
-
     return (
         <div style={homePage}>
           <Grid centered columns={3}>
@@ -27,7 +21,7 @@ class ClubAdminHome extends React.Component {
                         <span className='date'>Joined in 2015</span>
                       </Card.Meta>
                       <Card.Description>
-                        I like hardcore rock. Don't judge.
+                        `I like hardcore rock. Don't judge.`
                       </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
@@ -55,13 +49,6 @@ class ClubAdminHome extends React.Component {
                       </a>
                     </Card.Content>
                   </Card>
-
-
-                  <Rail position='left' style={filterTable}>
-                    {_.times(0, (i) => (
-                        <Placeholder key={i} />
-                    ))}
-
                     <Sticky context={this.contextRef} offset={200}>
                       <Segment>
                       <Grid.Column floated='left' width={10}>
@@ -81,7 +68,6 @@ class ClubAdminHome extends React.Component {
                       </Grid.Column>
                       </Segment>
                     </Sticky>
-                  </Rail>
                 </Segment>
               </Ref>
             </Grid.Column>
