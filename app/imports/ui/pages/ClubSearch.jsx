@@ -1,5 +1,5 @@
 import React, { createRef } from 'react';
-import { Grid, Icon, Header, Image, Sticky, Segment, Ref, Table, Checkbox, Card } from 'semantic-ui-react';
+import { Grid, Icon, Header, Image, Sticky, Segment, Ref, Rail, Table, Checkbox, Card } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class ClubSearch extends React.Component {
@@ -7,6 +7,11 @@ class ClubSearch extends React.Component {
 
   render() {
     const homePage = { paddingTop: '4px', paddingBottom: '15px' };
+
+    const Placeholder = () => <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />;
+
+    const filterTable = { paddingLeft: '-100px' };
+
     return (
         <div style={homePage}>
           <Grid centered columns={3}>
@@ -21,7 +26,7 @@ class ClubSearch extends React.Component {
                         <span className='date'>Joined in 2015</span>
                       </Card.Meta>
                       <Card.Description>
-                        `I like hardcore rock. Don&apos;t judge.`
+                        I like hardcore rock. Don't judge.
                       </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
@@ -49,8 +54,12 @@ class ClubSearch extends React.Component {
                       </a>
                     </Card.Content>
                   </Card>
-                  <Sticky context={this.contextRef} offset={200}>
-                    <Segment>
+                  <Rail position='left' style={filterTable}>
+                    {_.times(0, (i) => (
+                        <Placeholder key={i} />
+                    ))}
+                    <Sticky context={this.contextRef} offset={200}>
+                      <Segment>
                       <Grid.Column floated='left' width={10}>
                         <Header as='h3'>Filter Club</Header>
                         <Grid.Column floated='left' width={5}>
@@ -66,8 +75,9 @@ class ClubSearch extends React.Component {
                           <Checkbox toggle />
                         </Grid.Column>
                       </Grid.Column>
-                    </Segment>
-                  </Sticky>
+                      </Segment>
+                    </Sticky>
+                  </Rail>
                 </Segment>
               </Ref>
             </Grid.Column>
