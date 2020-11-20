@@ -9,7 +9,7 @@ class ClubAdminHome extends React.Component {
     return (
         <div style={homePage}>
           <Grid container centered stackable columns={2}>
-            <Image fluid src='https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/uhm-first-year.jpg'/>
+            <Image fluid src=''/>
             <Grid.Column>
               <Header as='h1' textAlign='center'>
                 <Icon name='edit' size='huge'/>
