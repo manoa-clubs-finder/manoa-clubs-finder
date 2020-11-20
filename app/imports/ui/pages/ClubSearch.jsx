@@ -8,8 +8,6 @@ class ClubSearch extends React.Component {
   render() {
     const homePage = { paddingTop: '4px', paddingBottom: '15px' };
 
-    const Placeholder = () => <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />;
-
     const filterTable = { paddingLeft: '-100px' };
 
     return (
@@ -26,7 +24,7 @@ class ClubSearch extends React.Component {
                         <span className='date'>Joined in 2015</span>
                       </Card.Meta>
                       <Card.Description>
-                        I like hardcore rock. Don't judge.
+                        I like hardcore rock. Don&pos;t judge.
                       </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
@@ -55,9 +53,6 @@ class ClubSearch extends React.Component {
                     </Card.Content>
                   </Card>
                   <Rail position='left' style={filterTable}>
-                    {_.times(0, (i) => (
-                        <Placeholder key={i} />
-                    ))}
                     <Sticky context={this.contextRef} offset={200}>
                       <Segment>
                       <Grid.Column floated='left' width={10}>
