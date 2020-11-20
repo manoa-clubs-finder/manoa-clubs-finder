@@ -2,7 +2,7 @@ import React, { createRef } from 'react';
 import { Grid, Icon, Header, Image, Sticky, Segment, Ref, Table, Checkbox, Card } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
-class ClubAdminHome extends React.Component {
+class ClubSearch extends React.Component {
   contextRef = createRef()
 
   render() {
@@ -77,4 +77,4 @@ class ClubAdminHome extends React.Component {
   }
 }
 
-export default ClubAdminHome;
+export default ClubSearch;
