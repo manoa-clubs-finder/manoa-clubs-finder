@@ -1,22 +1,29 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import {
+  AutoForm,
+  ErrorsField,
+  HiddenField,
+  LongTextField,
+  SubmitField,
+  TextField,
+} from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { Stuffs } from '../../api/stuff/Stuff';
+import { Clubs } from '../../api/club/Clubs';
 
-const bridge = new SimpleSchema2Bridge(Stuffs.schema);
+const bridge = new SimpleSchema2Bridge(Clubs.schema);
 
 /** Renders the Page for editing a single document. */
-class EditStuff extends React.Component {
+class EditClub extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, quantity, condition, _id } = data;
-    Stuffs.collection.update(_id, { $set: { name, quantity, condition } }, (error) => (error ?
+    const { name, address, image, description, _id } = data;
+    Clubs.collection.update(_id, { $set: { name, address, image, description } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -31,12 +38,13 @@ class EditStuff extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Stuff</Header>
+            <Header as="h2" textAlign="center" inverted>Edit Club</Header>
             <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
-                <NumField name='quantity' decimal={false}/>
-                <SelectField name='condition'/>
+                <TextField name='address'/>
+                <TextField name='image'/>
+                <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />
@@ -49,7 +57,7 @@ class EditStuff extends React.Component {
 }
 
 /** Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use. */
-EditStuff.propTypes = {
+EditClub.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -60,9 +68,9 @@ export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const documentId = match.params._id;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Stuffs.userPublicationName);
+  const subscription = Meteor.subscribe(Clubs.userPublicationName);
   return {
-    doc: Stuffs.collection.findOne(documentId),
+    doc: Clubs.collection.findOne(documentId),
     ready: subscription.ready(),
   };
-})(EditStuff);
+})(EditClub);

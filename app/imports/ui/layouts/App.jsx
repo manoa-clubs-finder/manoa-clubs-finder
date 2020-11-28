@@ -7,7 +7,6 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -16,6 +15,10 @@ import ClubAdminHome from '../pages/ClubAdminHome';
 import AdminHome from '../pages/AdminHome';
 import ClubUserHome from '../pages/ClubUserHome';
 import ClubSearch from '../pages/ClubSearch';
+import ListClubs from '../pages/ListClubs';
+import AddClub from '../pages/AddClub';
+import EditClub from '../pages/EditClub';
+import ListClubAdmin from '../pages/ListClubAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -30,9 +33,12 @@ class App extends React.Component {
               <Route path="/signup" component={Signup}/>
               <ClubAdminProtectedRoute path="/ClubAdminHome" component={ClubAdminHome}/>
               <ClubUserProtectedRoute path="/ClubUserHome" component={ClubUserHome}/>
+              <ProtectedRoute path="/list" component={ListClubs}/>
+              <ProtectedRoute path="/add" component={AddClub}/>
               <ProtectedRoute path="/ClubSearch" component={ClubSearch}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+              <ProtectedRoute path="/edit/:_id" component={EditClub}/>
               <AdminProtectedRoute path="/AdminHome" component={AdminHome}/>
+              <AdminProtectedRoute path="/admin" component={ListClubAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

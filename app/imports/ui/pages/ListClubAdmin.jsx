@@ -1,27 +1,14 @@
-import React, { createRef } from 'react';
-import {
-  Grid,
-  Icon,
-  Header,
-  Image,
-  Sticky,
-  Segment,
-  Ref,
-  Rail,
-  Table,
-  Checkbox,
-  Card,
-  Loader, Container
-} from 'semantic-ui-react';
-import PropTypes from 'prop-types';
-import { withTracker } from 'meteor/react-meteor-data';
+import React from 'react';
 import { Meteor } from 'meteor/meteor';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import ClubAdmin from '../components/ClubAdmin';
 import { Clubs } from '../../api/club/Clubs';
 import { Notes } from '../../api/note/Notes';
-import Club from '../components/Search';
 
-/** A simple static component to render some text for the landing page. */
-class ClubSearch extends React.Component {
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+class ListClubAdmin extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -32,9 +19,9 @@ class ClubSearch extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>List Clubs</Header>
+          <Header as="h2" textAlign="center" inverted>List Clubs (Admin)</Header>
           <Card.Group>
-            {this.props.clubs.map((club, index) => <Club
+            {this.props.clubs.map((club, index) => <ClubAdmin
                 key={index}
                 club={club}
                 notes={this.props.notes.filter(note => (note.clubId === club._id))}/>)}
@@ -45,7 +32,7 @@ class ClubSearch extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ClubSearch.propTypes = {
+ListClubAdmin.propTypes = {
   clubs: PropTypes.array.isRequired,
   notes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
@@ -61,4 +48,4 @@ export default withTracker(() => {
     notes: Notes.collection.find({}).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
-})(ClubSearch);
+})(ListClubAdmin);
