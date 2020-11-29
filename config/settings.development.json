@@ -7,9 +7,23 @@
   ],
 
   "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+    {
+      "clubName": "Basketball Club",
+      "description": "A club to play basketball",
+      "meetingTimes": "thursday 12:00-4:00 PM",
+      "location": "UH Basketball Courts",
+      "url": "none",
+      "contactInfo": "basketball@hawaii.edu",
+      "photo": "https://images-na.ssl-images-amazon.com/images/I/A1cd6TMkAML._AC_SL1500_.jpg"
+    },
+    {
+      "clubName": "Football Club",
+      "description": "A club to play football",
+      "meetingTimes": "Saturday 12:00-4:00 PM",
+      "location": "UH Football Field",
+      "url": "none",
+      "contactInfo": "footbal@hawaii.edu",
+      "photo": "https://www.gannett-cdn.com/presto/2020/09/22/USAT/5d63570b-11f8-41d8-9b4a-35545ec2a9f0-USP_NCAA_Football__Fiesta_Bowl-Penn_State_vs_Washi_x.JPG?crop=3199,1799,x0,y160&width=3199&height=1799&format=pjpg&auto=webp"
+    }
   ]
 }

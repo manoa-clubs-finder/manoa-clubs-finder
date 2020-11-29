@@ -1,11 +1,11 @@
 import { Meteor } from 'meteor/meteor';
-import { Clubs } from '../../api/club/club.js';
+import { Clubs } from '../../api/club/Clubs.js';
 
 /* eslint-disable no-console */
 
 /** Initialize the database with a default data document. */
 function addData(data) {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
+  console.log(`  Adding: ${data.clubName} `);
   Clubs.collection.insert(data);
 }
 
