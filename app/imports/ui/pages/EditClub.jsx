@@ -15,8 +15,8 @@ class EditClub extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { clubName, description, meetingTimes, location, url, contactInfo, photo, _id } = data;
-    Clubs.collection.update(_id, { $set: { clubName, description, meetingTimes, location, url, contactInfo, photo } }, (error) => (error ?
+    const { clubName, description, meetingTimes, location, url, contactInfo, photo, category, _id } = data;
+    Clubs.collection.update(_id, { $set: { clubName, description, meetingTimes, location, url, contactInfo, photo, category } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Club updated successfully', 'success')));
   }
@@ -41,6 +41,7 @@ class EditClub extends React.Component {
                 <TextField name='url'/>
                 <TextField name='contactInfo'/>
                 <TextField name='photo'/>
+                <TextField name='category'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
               </Segment>
