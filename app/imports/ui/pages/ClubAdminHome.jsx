@@ -5,10 +5,11 @@ import { Grid, Icon, Header, Image } from 'semantic-ui-react';
 class ClubAdminHome extends React.Component {
 
   render() {
-    const homePage = { paddingTop: '4px', paddingBottom: '15px' };
+    const homePage = { paddingTop: '25px', paddingBottom: '15px' };
     return (
-        <div style={homePage}>
+        <div style={homePage} id='clubadminhome-page'>
           <Grid container centered stackable columns={2}>
+            <Header as="h2" textAlign="center">Welcome Club Admin!</Header>
             <Image fluid src='\images\club-admin-home.jpg'/>
             <Grid.Column>
               <Header as='h1' textAlign='center'>

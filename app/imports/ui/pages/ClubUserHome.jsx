@@ -5,10 +5,11 @@ import { Grid, Icon, Header, Image } from 'semantic-ui-react';
 class ClubUserHome extends React.Component {
 
   render() {
-    const homePage = { paddingTop: '4px', paddingBottom: '15px' };
+    const homePage = { paddingTop: '25px', paddingBottom: '15px' };
     return (
-        <div style={homePage}>
+        <div style={homePage} id='userhome-page'>
           <Grid container centered stackable columns={2}>
+            <Header as="h2" textAlign="center">Welcome UH Student!</Header>
             <Image fluid src='https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/uhm-first-year.jpg'/>
             <Grid.Column>
               <Header as='h1'>

@@ -16,6 +16,8 @@ import ClubAdminHome from '../pages/ClubAdminHome';
 import AdminHome from '../pages/AdminHome';
 import ClubUserHome from '../pages/ClubUserHome';
 import ClubSearch from '../pages/ClubSearch';
+import ClubSearchAdmin from '../pages/ClubSearchAdmin';
+import ClubSearchClubAdmin from '../pages/ClubSearchClubAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -31,6 +33,8 @@ class App extends React.Component {
               <ClubAdminProtectedRoute path="/ClubAdminHome" component={ClubAdminHome}/>
               <ClubUserProtectedRoute path="/ClubUserHome" component={ClubUserHome}/>
               <ProtectedRoute path="/ClubSearch" component={ClubSearch}/>
+              <ClubAdminProtectedRoute path="/ClubSearchClubAdmin" component={ClubSearchClubAdmin}/>
+              <AdminProtectedRoute path="/ClubSearchAdmin" component={ClubSearchAdmin}/>
               <AdminProtectedRoute path="/edit/:_id" component={EditClub}/>
               <ClubAdminProtectedRoute path="/edit/:_id" component={EditClub}/>
               <AdminProtectedRoute path="/AdminHome" component={AdminHome}/>

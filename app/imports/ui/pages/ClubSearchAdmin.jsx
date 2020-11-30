@@ -4,17 +4,17 @@ import { Header, Container, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Clubs } from '../../api/club/Clubs';
-import Club from '../components/Club';
+import ClubAdmin from '../components/ClubAdmin';
 
 /** A simple static component to render some text for the landing page. */
-class ClubSearch extends React.Component {
+class ClubSearchAdmin extends React.Component {
   render() {
-    const clubSearch = { paddingTop: '15px', paddingBottom: '15px' };
+    const clubSearchAdmin = { paddingTop: '15px', paddingBottom: '15px' };
     return (
-        <Container style={clubSearch} id='clubsearch-page'>
+        <Container style={clubSearchAdmin} id='clubsearchadmin-page'>
           <Header as="h2" textAlign="center">UH Manoa Clubs</Header>
           <Card.Group>
-            {this.props.clubs.map((club, index) => <Club
+            {this.props.clubs.map((club, index) => <ClubAdmin
                 key={index}
                 club={club}/>)}
           </Card.Group>
@@ -24,7 +24,7 @@ class ClubSearch extends React.Component {
 }
 
 /** Require an array of Contact documents in the props. */
-ClubSearch.propTypes = {
+ClubSearchAdmin.propTypes = {
   clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -37,4 +37,4 @@ export default withTracker(() => {
     clubs: Clubs.collection.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ClubSearch);
+})(ClubSearchAdmin);

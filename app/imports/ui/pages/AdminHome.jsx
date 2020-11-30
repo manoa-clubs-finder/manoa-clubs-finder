@@ -4,7 +4,7 @@ import { Grid, Header, Icon } from 'semantic-ui-react';
 class AdminHome extends React.Component {
   render() {
     return (
-        <div className='admin-background' >
+        <div className='admin-background' id='adminhome-page' >
           <Grid container centered stackable columns={3} >
             <Grid.Column textAlign='center'>
               <Header as='h1' inverted>

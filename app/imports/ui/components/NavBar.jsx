@@ -16,17 +16,23 @@ class NavBar extends React.Component {
             <Header inverted as='h1'>Manoa Clubs Finder</Header>
           </Menu.Item>
           {Roles.userIsInRole(Meteor.userId(), 'clubAdmin') ? (
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/clubadminhome" key='list'>Club Admin Home</Menu.Item>
+              <Menu.Item id='navbar-club-admin-home' as={NavLink} activeClassName="active" exact to="/ClubAdminHome" key='list'>Club Admin Home</Menu.Item>
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/adminhome" key='admin'>Admin</Menu.Item>
+              <Menu.Item id='navbar-admin-home' as={NavLink} activeClassName="active" exact to="/AdminHome" key='admin'>Admin Home</Menu.Item>
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'clubUser') ? (
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/clubuserhome" key='list'>Club User Home</Menu.Item>
+              <Menu.Item id='navbar-user-home' as={NavLink} activeClassName="active" exact to="/ClubUserHome" key='list'>Club User Home</Menu.Item>
           ) : ''}
           {this.props.currentUser ? (
-              [<Menu.Item as={NavLink} activeClassName="active" exact to="/ClubSearch" key='list'>Search Clubs</Menu.Item>,
+              [<Menu.Item id='navbar-club-search' as={NavLink} activeClassName="active" exact to="/ClubSearch" key='list'>Search Clubs</Menu.Item>,
               ]
+          ) : ''}
+          {Roles.userIsInRole(Meteor.userId(), 'clubAdmin') ? (
+              <Menu.Item id='navbar-search-club-admin' as={NavLink} activeClassName="active" exact to="/ClubSearchClubAdmin" key='list'>Club Admin Edit Clubs</Menu.Item>
+          ) : ''}
+          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+              <Menu.Item id='navbar-search-club-admin' as={NavLink} activeClassName="active" exact to="/ClubSearchAdmin" key='list'>Admin Edit Clubs</Menu.Item>
           ) : ''}
           <Menu.Item position="right">
             {this.props.currentUser === '' ? (
