@@ -15,14 +15,18 @@ class Club extends React.Component {
             <Card.Description>{this.props.club.description}</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            {this.props.club.location}
+            Category - {this.props.club.category}
           </Card.Content>
           <Card.Content extra>
-            {this.props.club.url}
+            Location - {this.props.club.location}
           </Card.Content>
           <Card.Content extra>
-            {this.props.club.clubAdmin}
-            {this.props.club.contactInfo}
+            URL - {this.props.club.url}
+          </Card.Content>
+          <Card.Content extra>
+            Club Leader - {this.props.club.clubAdmin} / {this.props.club.clubAdminName}
+            <p></p>
+            Contact - {this.props.club.contactInfo}
           </Card.Content>
         </Card>
     );

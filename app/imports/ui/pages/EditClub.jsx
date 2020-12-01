@@ -43,6 +43,7 @@ class EditClub extends React.Component {
                 <TextField name='photo'/>
                 <TextField name='category'/>
                 <TextField name='clubAdmin'/>
+                <TextField name='clubAdminName'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
               </Segment>
