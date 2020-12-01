@@ -1,4 +1,4 @@
-name: ci-manoa-clubs-finder-react
+name: ci-manoa-clubs-finder
 
 on:
   push:
