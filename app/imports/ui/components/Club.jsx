@@ -21,6 +21,7 @@ class Club extends React.Component {
             {this.props.club.url}
           </Card.Content>
           <Card.Content extra>
+            {this.props.club.clubAdmin}
             {this.props.club.contactInfo}
           </Card.Content>
         </Card>

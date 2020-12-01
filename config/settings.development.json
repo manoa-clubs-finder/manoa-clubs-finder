@@ -3,7 +3,7 @@
     { "email": "admin@foo.com", "userId": "admin", "password": "changeme", "role": "admin" },
     { "email": "clubadmin@foo.com", "userId": "clubadmin", "password": "changeme", "role": "clubAdmin" },
     { "email": "clubuser@foo.com", "userId":  "clubuser", "password":  "changeme", "role": "clubUser"},
-    { "email": "john@foo.com", "userId": "john", "password": "changeme" }
+    { "email": "john@foo.com", "userId": "john", "password": "changeme", "role": "clubUser" }
   ],
 
   "defaultData": [
@@ -15,7 +15,8 @@
       "url": "none",
       "contactInfo": "basketball@hawaii.edu",
       "photo": "https://images-na.ssl-images-amazon.com/images/I/A1cd6TMkAML._AC_SL1500_.jpg",
-      "category": "Sports"
+      "category": "Sports",
+      "clubAdmin": "clubadmin"
     },
     {
       "clubName": "Football Club",
@@ -25,7 +26,8 @@
       "url": "none",
       "contactInfo": "footbal@hawaii.edu",
       "photo": "https://www.gannett-cdn.com/presto/2020/09/22/USAT/5d63570b-11f8-41d8-9b4a-35545ec2a9f0-USP_NCAA_Football__Fiesta_Bowl-Penn_State_vs_Washi_x.JPG?crop=3199,1799,x0,y160&width=3199&height=1799&format=pjpg&auto=webp",
-      "category": "Sports"
+      "category": "Sports",
+      "clubAdmin": "clubadmin"
     }
   ]
 }
