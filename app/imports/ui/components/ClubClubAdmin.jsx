@@ -13,7 +13,7 @@ class ClubClubAdmin extends React.Component {
             <Card.Header>{this.props.club.clubName}</Card.Header>
           </Card.Content>
           <Card.Content extra>
-            <Link to={`/edit/${this.props.club._id}`}>Edit</Link>
+            <Link id='edit-page' to={`/edit/${this.props.club._id}`}>Edit</Link>
           </Card.Content>
         </Card>
     );

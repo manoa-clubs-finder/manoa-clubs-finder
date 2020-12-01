@@ -11,7 +11,7 @@ class ClubSearchClubAdmin extends React.Component {
   render() {
     const clubSearchAdmin = { paddingTop: '15px', paddingBottom: '15px' };
     return (
-        <Container style={clubSearchAdmin} id='clubsearchadmin-page'>
+        <Container style={clubSearchAdmin} id='clubadmineditclubs-page'>
           <Header as="h2" textAlign="center">UH Manoa Clubs</Header>
           <Card.Group>
             {this.props.clubs.map((club, index) => <ClubClubAdmin

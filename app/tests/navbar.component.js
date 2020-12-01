@@ -56,6 +56,16 @@ class NavBar {
   async gotoClubSearchPage(testController) {
     await testController.click('#navbar-club-search');
   }
+
+  /** Pull down login menu, go to list stuff page. */
+  async gotoAdminEditClubsPage(testController) {
+    await testController.click('#navbar-admin-edit-club');
+  }
+
+  /** Pull down login menu, go to list stuff page. */
+  async gotoClubAdminEditClubsPage(testController) {
+    await testController.click('#navbar-club-admin-edit-club');
+  }
 }
 
 export const navBar = new NavBar();

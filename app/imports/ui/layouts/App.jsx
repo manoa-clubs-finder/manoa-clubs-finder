@@ -35,8 +35,7 @@ class App extends React.Component {
               <ProtectedRoute path="/ClubSearch" component={ClubSearch}/>
               <ClubAdminProtectedRoute path="/ClubSearchClubAdmin" component={ClubSearchClubAdmin}/>
               <AdminProtectedRoute path="/ClubSearchAdmin" component={ClubSearchAdmin}/>
-              <AdminProtectedRoute path="/edit/:_id" component={EditClub}/>
-              <ClubAdminProtectedRoute path="/edit/:_id" component={EditClub}/>
+              <ProtectedRoute path="/edit/:_id" component={EditClub}/>
               <AdminProtectedRoute path="/AdminHome" component={AdminHome}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>

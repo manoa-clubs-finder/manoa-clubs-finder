@@ -6,15 +6,18 @@ import { adminHomePage } from './adminhome.page';
 import { clubAdminHomePage } from './clubadminhome.page';
 import { userHomePage } from './userhome.page';
 import { clubSearchPage } from './clubsearch.page';
+import { adminEditClubsPage } from './admineditclubs.page';
+import { clubAdminEditClubsPage } from './clubadmineditclubs.page';
+import { editPage } from './edit.page';
 
 /* global fixture:false, test:false */
 
-/** Credentials for one of the sample users defined in settings.development.json. */
+/** Credentials for the sample users defined in settings.development.json. */
 const credentialsUser = { username: 'clubuser', password: 'changeme' };
 const credentialsAdmin = { username: 'admin', password: 'changeme' };
 const credentialsClubAdmin = { username: 'clubadmin', password: 'changeme' };
 
-fixture('meteor-application-template-react localhost test with default db')
+fixture('manoa-clubs-finder localhost test with default db')
     .page('http://localhost:3000');
 
 test('Test that landing page shows up', async (testController) => {
@@ -81,4 +84,26 @@ test('Test that clubsearch works for all roles', async (testController) => {
   await clubSearchPage.isDisplayed(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
+});
+
+test('Test that edit works for both roles', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentialsAdmin.username, credentialsAdmin.password);
+  await navBar.isLoggedIn(testController, credentialsAdmin.username);
+  await navBar.gotoAdminEditClubsPage(testController);
+  await adminEditClubsPage.isDisplayed(testController);
+  await adminEditClubsPage.gotoEditPage(testController);
+  await editPage.isDisplayed(testController);
+  await navBar.logout(testController);
+  await signoutPage.isDisplayed(testController);
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentialsClubAdmin.username, credentialsClubAdmin.password);
+  await navBar.isLoggedIn(testController, credentialsClubAdmin.username);
+  await navBar.gotoClubAdminEditClubsPage(testController);
+  await clubAdminEditClubsPage.isDisplayed(testController);
+  await clubAdminEditClubsPage.gotoEditPage(testController);
+  await editPage.isDisplayed(testController);
+  await navBar.logout(testController);
+  await signoutPage.isDisplayed(testController);
+  await navBar.gotoSigninPage(testController);
 });
