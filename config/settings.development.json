@@ -8,16 +8,76 @@
 
   "defaultData": [
     {
-      "clubName": "Basketball Club",
-      "description": "A club to play basketball",
-      "meetingTimes": "thursday 12:00-4:00 PM",
-      "location": "UH Basketball Courts",
+      "clubName": "Accounting Club",
+      "description": "none",
+      "meetingTimes": "none",
+      "location": "none",
       "url": "none",
-      "contactInfo": "basketball@hawaii.edu",
-      "photo": "https://images-na.ssl-images-amazon.com/images/I/A1cd6TMkAML._AC_SL1500_.jpg",
-      "category": "Sports",
+      "contactInfo": "chone@hawaii.edu",
+      "photo": "none",
+      "category": "Academic",
       "clubAdmin": "clubadmin",
-      "clubAdminName": "Club Admin"
+      "clubAdminName": "Elton Chon"
+    },
+    {
+      "clubName": "Alpha Omega Hawaii",
+      "description": "none",
+      "meetingTimes": "none",
+      "location": "none",
+      "url": "none",
+      "contactInfo": "micahsmi@hawaii.edu",
+      "photo": "none",
+      "category": "Spiritual",
+      "clubAdmin": "clubadmin",
+      "clubAdminName": "Micah Miyashiro"
+    },
+    {
+      "clubName": "Anime and Manga Society",
+      "description": "none",
+      "meetingTimes": "none",
+      "location": "none",
+      "url": "none",
+      "contactInfo": "chone@hawaii.edu",
+      "photo": "none",
+      "category": "Recreational",
+      "clubAdmin": "clubadmin",
+      "clubAdminName": "Elton Chon"
+    },
+    {
+      "clubName": "Eta Kappa Nu",
+      "description": "none",
+      "meetingTimes": "none",
+      "location": "none",
+      "url": "none",
+      "contactInfo": "dempseys@hawaii.edu",
+      "photo": "none",
+      "category": "Honorary Society",
+      "clubAdmin": "clubadmin",
+      "clubAdminName": "Sydney Demspey"
+    },
+    {
+      "clubName": "Ethnomusicology Association",
+      "description": "none",
+      "meetingTimes": "none",
+      "location": "none",
+      "url": "none",
+      "contactInfo": "sjacob77@hawaii.edu",
+      "photo": "none",
+      "category": "Cultural",
+      "clubAdmin": "clubadmin",
+      "clubAdminName": "Susan Jacob"
+    },
+    {
+      "clubName": "Hawaii HOME Project",
+      "description": "none",
+      "meetingTimes": "none",
+      "location": "none",
+      "url": "none",
+      "contactInfo": "lumevan@hawaii.edu",
+      "photo": "none",
+      "category": "Service",
+      "clubAdmin": "clubadmin",
+      "clubAdminName": "Evan Lum"
     },
     {
       "clubName": "Football Club",
@@ -31,5 +91,6 @@
       "clubAdmin": "clubadmin",
       "clubAdminName": "Club Admin"
     }
+
   ]
 }
