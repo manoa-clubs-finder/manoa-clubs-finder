@@ -44,7 +44,7 @@ class ChangeRole extends React.Component {
     return (
         <Grid container centered style={changeRolePage}>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Add Stuff</Header>
+            <Header as="h2" textAlign="center">Change Role</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
               <Segment>
                 <TextField name='userID'/>
