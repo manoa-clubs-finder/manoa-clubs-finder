@@ -7,14 +7,14 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 
 const options = [
-  { key: 'ca', text: 'Club Admin', value: 'clubAdmin' },
-  { key: 'a', text: 'Admin', value: 'admin' },
-  { key: 'cu', text: 'Club User', value: 'clubUser' },
+  { label: 'Club Admin', value: 'clubAdmin' },
+  { label: 'Admin', value: 'admin' },
+  { label: 'Club User', value: 'clubUser' },
 ];
 
 const formSchema = new SimpleSchema({
-  nameID: String,
-  condition: {
+  userID: String,
+  role: {
     type: String,
     allowedValues: ['clubAdmin', 'admin', 'clubUser'],
   },
@@ -39,9 +39,10 @@ class ChangeRole extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+    const changeRolePage = { paddingTop: '15px', paddingBottom: '20px' };
     let fRef = null;
     return (
-        <Grid container centered>
+        <Grid container centered style={changeRolePage}>
           <Grid.Column>
             <Header as="h2" textAlign="center">Add Stuff</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
