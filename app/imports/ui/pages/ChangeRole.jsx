@@ -7,7 +7,6 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Roles } from 'meteor/alanning:roles';
 
 const options = [
   { label: 'Club Admin', value: 'clubAdmin' },
@@ -31,11 +30,10 @@ class ChangeRole extends React.Component {
   /** On submit, insert the data. */
   submit(data, formRef) {
     const { role, userId } = data;
-    console.log(this.props.users.find({ username: userId }));
-    if (this.props.users.find({ username: userId })) {
-      console.log(this.props.users);
-      // Meteor.setUserRoles(userId, role);
-      Roles.addUsersToRoles(userId, role);
+    if (this.props.users.find(user => user.username === userId)) {
+      const user1 = this.props.users.find(user => user.username === userId);
+      Meteor.call('changeRoles', user1._id, role);
+      // Roles.addUsersToRoles(userId, role);
       swal('Success', 'Role Updated successfully', 'success');
       formRef.reset();
     } else {
