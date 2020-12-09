@@ -5,6 +5,9 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Roles } from 'meteor/alanning:roles';
 
 const options = [
   { label: 'Club Admin', value: 'clubAdmin' },
@@ -13,7 +16,7 @@ const options = [
 ];
 
 const formSchema = new SimpleSchema({
-  userID: String,
+  userId: String,
   role: {
     type: String,
     allowedValues: ['clubAdmin', 'admin', 'clubUser'],
@@ -27,9 +30,12 @@ class ChangeRole extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { role, userID } = data;
-    if (Meteor.users.findOne(userID)) {
-      Meteor.setUserRoles(userID, role);
+    const { role, userId } = data;
+    console.log(this.props.users.find({ username: userId }));
+    if (this.props.users.find({ username: userId })) {
+      console.log(this.props.users);
+      // Meteor.setUserRoles(userId, role);
+      Roles.addUsersToRoles(userId, role);
       swal('Success', 'Role Updated successfully', 'success');
       formRef.reset();
     } else {
@@ -47,7 +53,7 @@ class ChangeRole extends React.Component {
             <Header as="h2" textAlign="center">Change Role</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
               <Segment>
-                <TextField name='userID'/>
+                <TextField name='userId'/>
                 <SelectField name="role" options={options} />
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
@@ -59,4 +65,18 @@ class ChangeRole extends React.Component {
   }
 }
 
-export default ChangeRole;
+/** Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use. */
+ChangeRole.propTypes = {
+  users: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('adminPermission');
+  return {
+    users: Meteor.users.find({}).fetch(),
+    ready: subscription.ready(),
+  };
+})(ChangeRole);

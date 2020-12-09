@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
 import { Clubs } from '../../api/club/Clubs';
 
 // Admin-level publication.
@@ -15,6 +16,13 @@ Meteor.publish(Clubs.userPublicationName, function () {
 Meteor.publish(null, function () {
   if (this.userId) {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });
+  }
+  return this.ready();
+});
+
+Meteor.publish('adminPermission', function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Meteor.users.find({});
   }
   return this.ready();
 });
