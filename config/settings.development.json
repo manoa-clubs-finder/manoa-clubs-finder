@@ -39,7 +39,7 @@
       "url": "none",
       "contactInfo": "chone@hawaii.edu",
       "photo": "https://www.underconsideration.com/wordit/wordit_archives/0401_empty_Darrel_Austin.jpg",
-      "category": "Recreational",
+      "category": "Recreational, lesiure",
       "clubAdmin": "clubadmin",
       "clubAdminName": "Elton Chon"
     },
@@ -85,7 +85,7 @@
       "meetingTimes": "Saturday 12:00-4:00 PM",
       "location": "UH Football Field",
       "url": "none",
-      "contactInfo": "football@hawaii.edu",
+      "contactInfo": "clubadmin@foo.com",
       "photo": "https://www.underconsideration.com/wordit/wordit_archives/0401_empty_Darrel_Austin.jpg",
       "category": "Sports",
       "clubAdmin": "clubadmin",
