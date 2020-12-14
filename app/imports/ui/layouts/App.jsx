@@ -18,6 +18,7 @@ import ClubUserHome from '../pages/ClubUserHome';
 import ClubSearch from '../pages/ClubSearch';
 import ClubSearchAdmin from '../pages/ClubSearchAdmin';
 import ClubSearchClubAdmin from '../pages/ClubSearchClubAdmin';
+import ChangeRole from '../pages/ChangeRole';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -37,6 +38,7 @@ class App extends React.Component {
               <AdminProtectedRoute path="/ClubSearchAdmin" component={ClubSearchAdmin}/>
               <ProtectedRoute path="/edit/:_id" component={EditClub}/>
               <AdminProtectedRoute path="/AdminHome" component={AdminHome}/>
+              <AdminProtectedRoute path="/ChangeRole/" component={ChangeRole}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
