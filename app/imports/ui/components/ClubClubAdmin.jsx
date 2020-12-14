@@ -7,9 +7,10 @@ import { Meteor } from 'meteor/meteor';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class ClubClubAdmin extends React.Component {
 
-  emailCheck(){
-    return Meteor.user().emails[0].address === this.props.club.contactInfo
+  emailCheck() {
+    return Meteor.user().emails[0].address === this.props.club.contactInfo;
   }
+
   render() {
     return (
         <Card centered>
@@ -19,7 +20,7 @@ class ClubClubAdmin extends React.Component {
           </Card.Content>
           <Card.Content extra>
             {this.emailCheck() ?
-          ( [<Link id='edit-page' to={`/edit/${this.props.club._id}`}>Edit</Link>,] ): " "}
+          (<Link id='edit-page' to={`/edit/${this.props.club._id}`}>Edit</Link>) : ''}
           </Card.Content>
         </Card>
     );
