@@ -101,8 +101,6 @@ test('Test that edit works for both roles', async (testController) => {
   await navBar.isLoggedIn(testController, credentialsClubAdmin.username);
   await navBar.gotoClubAdminEditClubsPage(testController);
   await clubAdminEditClubsPage.isDisplayed(testController);
-  await clubAdminEditClubsPage.gotoEditPage(testController);
-  await editPage.isDisplayed(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
   await navBar.gotoSigninPage(testController);
