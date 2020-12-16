@@ -9,6 +9,7 @@ import { clubSearchPage } from './clubsearch.page';
 import { adminEditClubsPage } from './admineditclubs.page';
 import { clubAdminEditClubsPage } from './clubadmineditclubs.page';
 import { editPage } from './edit.page';
+import { editRolePage } from './editrole.page';
 
 /* global fixture:false, test:false */
 
@@ -106,4 +107,14 @@ test('Test that edit works for both roles', async (testController) => {
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
   await navBar.gotoSigninPage(testController);
+});
+
+test('Test that edit role page works', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentialsAdmin.username, credentialsAdmin.password);
+  await navBar.isLoggedIn(testController, credentialsAdmin.username);
+  await navBar.gotoEditRolePage(testController);
+  await editRolePage.isDisplayed(testController);
+  await navBar.logout(testController);
+  await signoutPage.isDisplayed(testController);
 });
