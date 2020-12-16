@@ -6,7 +6,7 @@ class Landing extends React.Component {
   render() {
     const homePage = { paddingBottom: '15px' };
     return (
-        <div style={homePage} id='landin-page'>
+        <div style={homePage} id='landing-page'>
           <Grid verticalAlign='middle' textAlign='center' container>
             <Grid.Row>
               <Grid.Column floated='left' width={3}>
