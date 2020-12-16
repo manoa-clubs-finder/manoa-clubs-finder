@@ -4,7 +4,7 @@ import { Card, Grid, Dropdown, Menu, Sticky, Container, Header } from 'semantic-
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Clubs } from '../../api/club/Clubs';
-import Club from '../components/Club';
+import ClubAdmin from '../components/ClubAdmin';
 
 const categoryOptions = [
   { key: 'all', value: '', text: 'All Categories' },
@@ -23,7 +23,7 @@ const categoryOptions = [
 
 /** A simple static component to render some text for the landing page. */
 class ClubSearchAdmin extends React.Component {
-  
+
   contextRef = createRef()
 
   constructor() {
@@ -46,56 +46,53 @@ class ClubSearchAdmin extends React.Component {
     this.setState({ searchQuery });
     /* console.log('searchQuery.value'); */
   }
-  
+
   render() {
     const { options } = this.state;
 
     const clubSearch = { paddingTop: '15px', paddingBottom: '15px' };
 
     const filteredClubs = this.props.clubs.filter((club) => club.category.toLowerCase().indexOf(this.state.value) !== -1);
-    
+
     return (
         <div ref={this.contextRef}>
           <Container style={clubSearch} id='admineditclubs-page'>
             <Header as="h2" textAlign="center">UH Manoa Clubs</Header>
-          <Grid>
-            <Sticky context={this.contextRef}>
-              <Menu
-                  tabular
-                  inverted
-                  style={{ backgroundColor: '#fff', paddingTop: '10px', marginRight: '1em', marginTop: '1em' }}
-              >
-                <Menu.Item>
-                  <Header as='h4' style={{ paddingTop: '10px' }}>Filter Clubs</Header>
-                  <Dropdown
-                      fluid
-                      selection
-                      options={options}
-                      value={this.state.value}
-                      placeholder='All Categories'
-                      onChange={this.handleChange}
-                      onSearchChange={this.handleSearchChange}
-                  />
-                </Menu.Item>
-              </Menu>
-            </Sticky>
-          </Grid>
-          <Grid centered columns={3}>
-            <Grid.Column>
-              <div>
-                <Card.Group>
-                  {filteredClubs.map((club, index) => <ClubAdmin
-                      key={index}
-                      club={club}/>)}
-                </Card.Group>
-              </div>
-            </Grid.Column>
-          </Grid>
+            <Grid>
+              <Sticky context={this.contextRef}>
+                <Menu
+                    tabular
+                    inverted
+                    style={{ backgroundColor: '#fff', paddingTop: '10px', marginRight: '1em', marginTop: '1em' }}
+                >
+                  <Menu.Item>
+                    <Header as='h4' style={{ paddingTop: '10px' }}>Filter Clubs</Header>
+                    <Dropdown
+                        fluid
+                        selection
+                        options={options}
+                        value={this.state.value}
+                        placeholder='All Categories'
+                        onChange={this.handleChange}
+                        onSearchChange={this.handleSearchChange}
+                    />
+                  </Menu.Item>
+                </Menu>
+              </Sticky>
+            </Grid>
+            <div>
+              <Card.Group>
+                {filteredClubs.map((club, index) => <ClubAdmin
+                    key={index}
+                    club={club}/>)}
+              </Card.Group>
+            </div>
           </Container>
         </div>
     );
   }
 }
+
 /** Require an array of Contact documents in the props. */
 ClubSearchAdmin.propTypes = {
   clubs: PropTypes.array.isRequired,
