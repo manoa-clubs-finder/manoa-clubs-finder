@@ -45,7 +45,7 @@ class ChangeRole extends React.Component {
     const changeRolePage = { paddingTop: '15px', paddingBottom: '20px' };
     let fRef = null;
     return (
-        <Grid container centered style={changeRolePage}>
+        <Grid container centered style={changeRolePage} id='editrole-page'>
           <Grid.Column>
             <Header as="h2" textAlign="center">Change Role</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
