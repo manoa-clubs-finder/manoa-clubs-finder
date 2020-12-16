@@ -1,3 +1,4 @@
+import React, { createRef } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Card, Grid, Dropdown, Menu, Sticky, Container, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
