@@ -13,16 +13,16 @@ class ClubClubAdmin extends React.Component {
 
   render() {
     return (
+        this.emailCheck() ?
         <Card centered>
           <Image src={this.props.club.photo} wrapped ui={false} />
           <Card.Content>
             <Card.Header>{this.props.club.clubName}</Card.Header>
           </Card.Content>
           <Card.Content extra>
-            {this.emailCheck() ?
-                (<Link id='edit-page' to={`/edit/${this.props.club._id}`}>Edit</Link>) : ' '}
+                <Link id='edit-page' to={`/edit/${this.props.club._id}`}>Edit</Link>
           </Card.Content>
-        </Card>
+        </Card> : ''
     );
   }
 }
