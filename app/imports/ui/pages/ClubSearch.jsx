@@ -9,7 +9,6 @@ import Club from '../components/Club';
 const categoryOptions = [
   { key: 'all', value: '', text: 'All Categories' },
   { key: 'academic', value: 'academic', text: 'Academic' },
-  { key: 'music', value: 'music', text: 'Music' },
   { key: 'sports', value: 'sports', text: 'Sports' },
   { key: 'spiritual', value: 'spiritual', text: 'Spiritual' },
   { key: 'recreational', value: 'recreational', text: 'Recreational' },
