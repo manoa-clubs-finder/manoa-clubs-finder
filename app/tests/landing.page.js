@@ -8,7 +8,7 @@ class LandingPage {
 
   /** Asserts that this page is currently displayed. */
   async isDisplayed(testController) {
-    await testController.wait(5000).expect(this.pageSelector.exists).ok();
+    await testController.wait(50000).expect(this.pageSelector.exists).ok();
   }
 }
 
